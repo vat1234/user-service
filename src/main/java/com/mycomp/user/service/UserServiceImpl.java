@@ -38,13 +38,14 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserServiceResponse register(User user) throws UserServiceException {
 		try {
-
+			//TODO: validation of password field to be handled
 			UserDetails userDetails = userDetailsRepository.save(UserDetails.builder().birthdate(user.getBirthdate())
 					.email(user.getEmail()).firstName(user.getFirstName()).lastName(user.getLastName())
 					.gender(user.getGender()).mobileNo(user.getMobileNumber()).build());
 			if (null != userDetails) {
 				byte[] decodedBytes = Base64.getDecoder().decode(user.getPassword());
 				String value = new String(decodedBytes);
+				// For security reasons it is encoded again
 				String cred = passwordEncoder.encode(value);
 				userCredentialRepository
 						.save(UserCredential.builder().username(userDetails.getEmail()).password(cred).build());
