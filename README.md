@@ -49,6 +49,7 @@ Register User
 
 Example:
 POST http://localhost:8080/v1/user
+
 body- {
     "password":"c29tZXBhc3N3b3Jk",
     "firstName":"Varsha",
