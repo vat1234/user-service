@@ -50,10 +50,12 @@ Register User
 
 POST http://${host}:${port}/v1/users
 
+
+
 Example:
 
 body- {
-    "password":"c29tZXBhc3N3b3Jk",
+    "password":"c29tZXBhc3N3b3Jk", //Base64Encoded password should be provided
     "firstName":"Varsha",
     "lastName":"Mulgur",
     "email":"test@testmail.com",
