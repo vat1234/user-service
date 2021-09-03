@@ -69,6 +69,6 @@ POST http://localhost:8080/login
 
 body-{"username":"test@testmail.com","password":"somepassword"}
 
-Response : Returns the bearertoken .
+Response header contains the bearer token .
 
 
