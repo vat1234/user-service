@@ -47,8 +47,10 @@ For testing the actions, I recommend using Postman.
 Register User
 -------------------
 
+
+POST http://${host}:${port}/v1/users
+
 Example:
-POST http://localhost:8080/v1/users
 
 body- {
     "password":"c29tZXBhc3N3b3Jk",
@@ -63,12 +65,16 @@ Response : {"user":"test@testmail.com","msg":"Registered successfully"}
 
 LOGIN  
 --------------------
-Example:
 
-POST http://localhost:8080/login
+POST http://${host}:${port}/login
+
+Example:
 
 body-{"username":"test@testmail.com","password":"somepassword"}
 
 Response header contains the bearer token .
 
+Points to NOTE
+----------------------------------
+1. Use the port mentioned in the docker compose file
 
